@@ -1,0 +1,158 @@
+
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    overflow-x: hidden;
+
+    /* PREMIUM GRADIENT BACKGROUND */
+    background: linear-gradient(135deg, #5f2c82, #49a09d);
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 80px 20px 30px;
+}
+
+/* MAIN TITLE */
+.main-title {
+    font-size: 60px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* SUBTITLE */
+.subtitle {
+    font-size: 18px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* NAV BUTTON */
+.navbar button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+/* ACTIVE BUTTON */
+.active-btn {
+    background: rgba(255,255,255,0.2);
+}
+
+/* HOVER EFFECT */
+.navbar button:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.05);
+}
+
+/* 🔥 CONTENT BOX (FINAL FIXED) */
+.content-box {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+
+    /* IMPORTANT FIX */
+    max-height: none;
+    overflow: visible;
+
+    scroll-behavior: smooth;
+}
+
+/* CONTENT TITLE */
+.content-title {
+    font-size: 26px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    padding-bottom: 8px;
+}
+
+/* CONTENT TEXT */
+.content-box p {
+    font-size: 16px;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+/* FADE ANIMATION */
+.fade {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🌊 WAVE FIX */
+.wave {
+    margin-top: 50px;
+}
+
+.wave svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width: 768px) {
+
+    .main-title {
+        font-size: 35px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .content-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .content-title {
+        font-size: 22px;
+    }
+
+    .content-box p {
+        font-size: 14px;
+    }
+}

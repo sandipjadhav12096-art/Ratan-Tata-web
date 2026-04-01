@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ratan Tata</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #5f2c82, #49a09d);
+}
+
+.header {
+    text-align: center;
+    padding: 80px 20px 30px;
+}
+
+.main-title {font-size:60px;}
+.subtitle {margin-top:10px;}
+
+.navbar {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:25px;
+}
+
+.navbar button {
+    background:transparent;
+    border:none;
+    color:white;
+    padding:8px 16px;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.navbar button:hover,
+.active-btn {
+    background:rgba(255,255,255,0.2);
+}
+
+.content-box {
+    max-width:900px;
+    margin:50px auto;
+    padding:30px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border-radius:15px;
+}
+
+.content-box p {line-height:1.8;}
+
+.fade {animation:fadeIn .5s ease;}
+
+@keyframes fadeIn {
+from{opacity:0;transform:translateY(15px);}
+to{opacity:1;}
+}
+
+.wave svg {width:100%;height:100px;}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1 class="main-title">RATAN TATA</h1>
+<p class="subtitle">The Visionary Industrialist of India</p>
+
+<div class="navbar">
+<button class="active-btn" onclick="changeContent('home',this)">Home</button>
+<button onclick="changeContent('early',this)">Early Life</button>
+<button onclick="changeContent('edu',this)">Education</button>
+</div>
+</div>
+
+<div class="content-box fade" id="content"></div>
+
+<script>
+
+const data = {
+
+home:{
+title:"About",
+text:`Ratan Tata was one of Indias most respected industrialists and a globally admired business leader. He was known for his visionary leadership, strong ethical values, and humble personality. As the former chairman of the Tata Group, he played a major role in transforming the company into a global business empire.
+
+When he became chairman in 1991, the Tata Group was mainly focused on India. Under his leadership, the company expanded into international markets and became a globally recognized brand. He led important business decisions and major acquisitions that helped Tata Group grow rapidly and gain worldwide respect.
+
+Ratan Tata was not only a successful businessman but also a great human being. He believed that businesses should serve society and not just focus on profit. A large portion of Tata Group earnings is used for social welfare activities like education, healthcare, and rural development. His commitment to helping others made him highly respected across the world.
+
+Even after retiring in 2012, he continued to support startups and young entrepreneurs. He invested in companies like Ola and Paytm and encouraged innovation in India. His life is an example of leadership, honesty, and dedication.
+
+Ratan Tata passed away in October 2024, leaving behind a powerful legacy. His journey continues to inspire millions of people to dream big, work hard, and stay humble.`},
+
+early:{
+title:"Early Life",
+text:`Ratan Tata was born in Mumbai in 1937. His parents separated early, and he was raised by his grandmother. His childhood shaped his discipline, humility, and strong values.`
+},
+
+edu:{
+title:"Education",
+text:`He studied architecture at Cornell University and later attended Harvard Business School, gaining global exposure and leadership skills.`
+}
+
+};
+
+function changeContent(section,btn){
+const box=document.getElementById("content");
+
+box.innerHTML=`
+<h2>${data[section].title}</h2>
+<p>${data[section].text}</p>
+`;
+
+document.querySelectorAll(".navbar button").forEach(b=>b.classList.remove("active-btn"));
+btn.classList.add("active-btn");
+}
+
+window.onload=function(){
+changeContent('home', document.querySelector('.navbar button'));
+}
+
+</script>
+
+</body>
+</html>
